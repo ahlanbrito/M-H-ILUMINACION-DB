@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Verificación M&H ILUMINACIÓN - Pago</title>
+    <link rel="stylesheet" href="../estilos/styles.css"> <!-- Para el header/footer -->
+    <link rel="stylesheet" href="../estilos/stylepago.css"> <!-- Tus estilos específicos de pago -->
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo">M&H<span> ILUMINACIÓN</span>
+                <small> tienda online</small>
+            </div>
+        </a>
+        <input type="text" placeholder="¿Qué estás buscando?">
+        <div class="icons">
+            <a href="../paginas/carrito.html" class="icon-link">
+                🛒 <span class="count">0</span>
+            </a>
+            <div id="user-status">
+                <button id="modo-toggle">🌙 Modo Oscuro</button>
+                <a href="../paginas/Login.html" id="login-link">Ingresar / Registrarse</a>
+                <div id="user-profile" style="display: none; align-items: center; gap: 10px;">
+                    <span id="username-display" style="color: #ff9900; font-weight: bold;"></span>
+                    <button id="logout-btn" style="background: #f0f0f0; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                        Cerrar sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="payment-methods">
+            <div class="payment-title"><strong>Pago con</strong></div>
+            
+            <div class="method">
+                <input type="radio" id="klarna-installments" name="payment" value="klarna" />
+                <label for="klarna-installments">
+                    <span style="background-color: #FFD29D; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; color: #8B4513;">Klarna</span> &nbsp;Cuotas <span style="color: #A0522D;">NUEVO</span> <br />
+                    <small style="margin-left: 34px;">4 pagos sin interés de $27.25 u otras opciones disponibles. <a href="#">Más información</a></small>
+                </label>
+            </div>
+
+            <div class="method">
+                <input type="radio" id="paypal" name="payment" value="paypal" checked />
+                <label for="paypal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo"/>
+                    PayPal
+                </label>
+            </div>
+
+            <div class="method">
+                <input type="radio" id="mastercard" name="payment" value="mastercard" />
+                <label for="mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard Logo"/>
+                    MasterCard
+                </label>
+            </div>
+            
+            <div class="method">
+                <input type="radio" id="visa" name="payment" value="visa" />
+                <label for="visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa Logo"/>
+                    x-l605
+                </label>
+            </div>
+
+            <div class="method">
+                <input type="radio" id="add-new-card" name="payment" value="new_card" />
+                <label for="add-new-card" class="checkbox-label">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa Logo"/>
+                    Añadir nueva tarjeta
+                </label>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h3><strong>Resumen del pedido</strong></h3>
+
+            <!-- Contenedor para los ítems del pedido -->
+            <div id="order-items-summary">
+                <!-- Los ítems del carrito se cargarán aquí dinámicamente -->
+            </div>
+
+            <div class="summary-line">
+                <span>Envío</span>
+                <span id="shipping-display">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="subtotal-display">$0.00</span>
+            </div>
+            <hr style="border: none; border-top: 1px solid #FFB74D; margin: 10px 0;"> 
+            <div class="summary-line">
+                <strong>Total del pedido</strong>
+                <strong id="total-display">$0.00</strong>
+            </div>
+            <p style="font-size:0.9em;">Al realizar su pedido, acepta el <a href="#">Acuerdo de usuario de M&H ILUMINACIÓN</a> y el <a href="#">Aviso de Privacidad</a>.</p>
+            <button id="pay-button" class="pay-button">Pagar con PayPal</button>
+            <p style="margin-top:10px; font-size:0.9em;">Finalizará el pago en PayPal.</p>
+            <p style="margin-top:10px; font-size:0.8em; color:gray;">Compra protegida por la <a href="#">garantía de devolución de dinero de M&H ILUMINACIÓN</a></p>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/pago.js"></script>
+</body>
+</html>

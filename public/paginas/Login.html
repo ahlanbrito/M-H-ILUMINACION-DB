@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&M Iluminación - Login</title>
+    <link rel="stylesheet" href="../estilos/styleLogin.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-container">
+    <a href="../index.html" class="logo-link">
+        <div class="logo">
+                        <h2>H&M ILUMINACIÓN</h2>
+            <p>EXPERTOS EN ILUMINACIÓN</p>
+        </div>
+    </a>
+        <div class="form-tabs">
+            <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+            <button class="tab-btn" data-tab="register">Registrarse</button>
+        </div>
+
+        <div id="login-form" class="form-content active">
+            <form>
+                <p>Acceder a tu cuenta</p>
+
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" name="password" placeholder="********" required>
+                </div>
+
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Recuérdame</label>
+                    </div>
+                    <a href="#" class="forgot-password">¿Olvidaste la contraseña?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">Acceder</button>
+            </form>
+        </div>
+
+        <div id="register-form" class="form-content">
+            <form>
+                <p>Registra una Cuenta</p>
+
+                <div class="input-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" name="email" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="register-password">Contraseña</label>
+                    <input type="password" id="register-password" name="password" placeholder="********" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="repeat-password">Repite la contraseña</label>
+                    <input type="password" id="repeat-password" name="repeat-password" placeholder="********" required>
+                </div>
+
+                <div class="input-group newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter" checked>
+                    <label for="newsletter">Suscríbete</label>
+                </div>
+
+                <p class="privacy-text">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web, gestionar el acceso a tu cuenta y otros propósitos descritos en nuestra política de privacidad.</p>
+
+                <button type="submit" class="submit-btn">Registrar</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>POLÍTICAS DE PRIVACIDAD</p>
+            <p>AYUDA</p>
+        </div>
+    </div>
+</body>
+<script src="../js/login.js"></script>
+</html>

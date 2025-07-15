@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos | M&H ILUMINACIÓN</title>
+    <link rel="stylesheet" href="../estilos/styles.css">
+    <link rel="stylesheet" href="../estilos/quienes-somos.css">
+    <link rel="stylesheet" href="../estilos/reproductor.css">
+</head>
+<body>
+<header class="header">
+    <a href="../index.html" class="logo-link">
+        <div class="logo">M&H<span> ILUMINACIÓN</span>
+            <small> tienda online</small>
+        </div>
+    </a>
+    <input type="text" placeholder="¿Qué estás buscando?">
+    <div class="icons">
+
+        <a href="../paginas/carrito.html" class="icon-link">
+            🛒 <span class="count">0</span>
+        </a>
+        <div id="user-status">
+            <!-- Los IDs para el estado de usuario en el header -->
+            <button id="modo-toggle">🌙 Modo Oscuro</button>
+            <a href="Login.html" id="login-link">Ingresar / Registrarse</a>
+            <div id="user-profile" style="display: none; align-items: center; gap: 10px;">
+                <span id="username-display" style="color: #ff9900; font-weight: bold;"></span>
+                <button id="logout-btn" style="background: #f0f0f0; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="about-container">
+        <section class="who-we-are-video-section">
+            <h1 id="quienes-somos-titulo">Quiénes Somos</h1> 
+            <p id="quienes-somos-descripcion">
+                <!-- La descripción principal se cargará aquí -->
+            </p>
+            <div class="video-wrapper">
+                <video controls autoplay loop playsinline id="quienes-somos-video">
+                    <!-- La fuente del video se cargará aquí -->
+                    Tu navegador no soporta el tag de video.
+                </video>
+            </div>
+        </section>
+        
+        <section class="values-section">
+            <h2>Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h3 id="subtitulo1">Innovación</h3>
+                    <p id="descripcion1">Buscamos constantemente nuevas tecnologías y diseños para ofrecer productos vanguardistas.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌱</div>
+                    <h3 id="subtitulo2">Sostenibilidad</h3>
+                    <p id="descripcion2">Promovemos el uso de materiales reciclables y tecnologías de bajo consumo energético.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3 id="subtitulo3">Integridad</h3>
+                    <p id="descripcion3">Operamos con transparencia y honestidad en todas nuestras relaciones comerciales.</p>
+                </div>
+                <!-- Si tienes más subtítulos/descripciones en la DB, puedes añadir más value-item aquí con IDs como subtitulo4, descripcion4, etc. -->
+            </div>
+        </section>
+    </main>
+<script src="../js/script.js"></script>
+<script src="../js/quienesSomos.js"></script> <!-- NUEVO: Enlazar el script de Quienes Somos -->
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&M Tienda Online</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body>
+<header class="header">
+    <div class="logo">M&H<span> ILUMINACIÓN</span>
+        <small> tienda online</small>
+    </div>
+    <!-- MODIFICACIÓN: Añadir ID al input y un botón de búsqueda -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="¿Qué estás buscando?">
+        <button id="search-button" class="search-btn">Buscar</button>
+    </div>
+    
+    <div class="icons">
+
+        <a href="paginas/carrito.html" class="icon-link">
+            🛒 <span class="count">0</span>
+        </a>
+        <div id="user-status">
+            <button id="modo-toggle">🌙 Modo Oscuro</button>
+            <a href="paginas/Login.html" id="login-link">Ingresar / Registrarse</a>
+            <div id="user-profile" style="display: none; align-items: center; gap: 10px;">
+                <span id="username-display" style="color: #ff9900; font-weight: bold;"></span>
+                <button id="logout-btn" style="background: #f0f0f0; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="banner">
+    <section class="hero">
+        <video class="imagen-invertida" autoplay loop muted playsinline>
+            <source src="videos/Vídeo sin título ‐ Hecho con Clipchamp (1).mp4" type="video/mp4">
+            Tu navegador no soporta el tag de video.
+        </video>
+        <div class="hero-text">
+            <p>Descuentos: 10% OFF</p>
+            <p><span class="old-price">$75.90</span> <span class="new-price">$68.31</span></p>
+            <button>VER MÁS DESCUENTOS</button>
+        </div>
+    </section>
+    <div class="offer"></div>
+</section>
+
+    <main>
+        <h2>M&H ILUMINACIÓN, los expertos en iluminación</h2>
+        <p>¿Qué tipo de oferta buscas?</p>
+        <div class="categories" id="products-container">
+            <!-- Los productos se cargarán aquí dinámicamente desde el backend -->
+        </div>
+
+      <div id="modalProducto" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+
+            <div class="producto-header">
+
+                <div class="producto-info">
+                    <h1 class="producto-titulo" id="modalProductTitle" data-product-id=""></h1>
+
+                    <div class="producto-rating">
+                        <span class="estrellas">★★★★☆</span>
+                        <span class="rating-count" id="ratingCount"></span>
+                    </div>
+
+                    <div class="mas-vendido" id="bestSellerBadge"></div>
+
+                    <div class="precio">
+                        Precio: <span class="precio-actual" id="modalProductPrice"></span>
+                    </div>
+
+                    <div class="product-details"></div>
+                    <div class="product-about"></div>
+
+                   <div class="opciones">
+                        <div class="opcion">
+                            <label for="productColor">Color:</label>
+                            <select id="productColor">
+                                <option value="">Seleccionar</option>
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="gris">Gris</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-quantity">
+                        <button class="quantity-btn minus" onclick="cambiarCantidad(-1)">-</button>
+                        <input type="number" value="1" min="1" id="productQuantity">
+                        <button class="quantity-btn plus" onclick="cambiarCantidad(1)">+</button>
+                    </div>
+
+                    <button class="boton-carrito" onclick="agregarAlCarrito()">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<a class="whatsapp" href="https://wa.me/+593983544806" target="_blank">💬</a>
+
+<script src="js/script.js"></script>
+<script src="js/loadProducts.js"></script>
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3 class="footer-title">Sobre Nosotros</h3>
+            <ul class="footer-list">
+                <li><a href="paginas/quienesSomos.html">Quiénes Somos</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Políticas de la empresa</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3 class="footer-title">Nuestros Servicios</h3>
+            <ul class="footer-list">
+                <li><a href="#">Soporte Compras Web</a></li>
+                <li><a href="#">Facturas Electrónicas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+            <h3 class="footer-title">Comentarios</h3>
+            <!-- MODIFICACIÓN: Eliminar action del formulario, el JS lo manejará -->
+            <form class="subscribe-form">
+                <input type="text" name="nombre" placeholder="Nombre" class="form-input" required>
+                <input type="email" name="correo" placeholder="Correo" class="form-input" required>
+                <textarea name="comentario" placeholder="Comentario" class="form-input" required></textarea>
+                <button type="submit" class="subscribe-btn">Enviar</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© H&M ILUMINACIÓN. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<script>
+   document.querySelector(".subscribe-form").addEventListener("submit", async function(e) {
+    e.preventDefault(); // Previene el envío real del formulario (por defecto)
+
+    // Obtener valores del formulario
+    const nombre = document.querySelector('.subscribe-form input[name="nombre"]').value.trim();
+    const correo = document.querySelector('.subscribe-form input[name="correo"]').value.trim();
+    const comentario = document.querySelector('.subscribe-form textarea[name="comentario"]').value.trim();
+
+    // Validar campos básicos
+    if (!nombre || !correo || !comentario) {
+        alert("Por favor, complete todos los campos.");
+        return;
+    }
+
+    // Crear un objeto con los datos a enviar al servidor
+    const datosComentario = {
+        nombre: nombre,
+        correo: correo,
+        comentario: comentario
+    };
+
+    console.log('Enviando comentario:', datosComentario); // Debugging
+
+    try {
+        // Enviar los datos al nuevo endpoint del servidor usando fetch
+        const response = await fetch('/api/comentarios', { // NUEVA RUTA
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Indicamos que estamos enviando JSON
+            },
+            body: JSON.stringify(datosComentario) // Convertimos el objeto a una cadena JSON
+        });
+
+        const data = await response.json(); // Esperamos una respuesta JSON
+
+        if (response.ok) { // Si la respuesta es 2xx (éxito)
+            alert(data.message); // Mostrar el mensaje de éxito del backend
+            document.querySelector(".subscribe-form").reset(); // Limpiar formulario
+        } else {
+            // Si la respuesta no es 2xx, mostrar el mensaje de error del backend
+            alert("Hubo un problema al enviar tu comentario: " + (data.message || "Error desconocido"));
+            console.error('Error del servidor al enviar comentario:', data.error || data); // Debugging
+        }
+    } catch (error) {
+        console.error('Error de red o del servidor al enviar el comentario:', error);
+        alert("Ocurrió un error al enviar tu comentario. Por favor, inténtalo de nuevo más tarde.");
+    }
+});
+</script>
+
+</body>
+</html>

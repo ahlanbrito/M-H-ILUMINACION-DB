@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF3E0; /* Very light orange/cream */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header (assuming it's consistent with styles.css, but including for completeness) */
+/* .header styles should primarily come from styles.css to maintain consistency */
+/* If you want to override specific header styles for this page, you can do so here */
+
+/* Main container */
+.container {
+    display: flex;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto; /* Add margin to top/bottom */
+    gap: 20px;
+}
+
+/* Payment methods */
+.payment-methods {
+    flex: 2;
+    background-color: #FFFFFF; /* Keep white for clarity of input fields */
+    padding: 20px;
+    border-radius: 8px; /* Slightly more rounded corners */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Soft shadow */
+}
+
+.payment-title {
+    font-size: 1.3em; /* Slightly larger title */
+    margin-bottom: 15px;
+    color: #E65100; /* Darker orange for emphasis */
+    font-weight: bold;
+}
+
+.method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 8px 0; /* A little padding for each method */
+    border-bottom: 1px solid #FFECB3; /* Light orange separator */
+}
+.method:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+
+.method input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #FF8F00; /* Orange radio button */
+}
+
+.method label {
+    display: flex;
+    align-items: center;
+    color: #333; /* Dark gray for text */
+    flex-wrap: wrap; /* Added this for better responsiveness from previous change */
+}
+.method label > * {
+    margin-right: 5px; /* Adjust spacing between elements within the label */
+}
+
+
+.method img {
+    height: 24px;
+    margin-right: 10px;
+}
+/* Style for payment logos group */
+.payment-logos {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between card logos */
+}
+.payment-logos img {
+    height: 20px; /* Smaller height for grouped logos */
+    margin-right: 0; /* Remove default margin */
+}
+
+
+/* Summary side panel */
+.summary {
+    flex: 1;
+    background-color: #ffffff; /* Light yellow/gold */
+    padding: 20px;
+    border-radius: 8px; /* Slightly more rounded corners */
+    height: fit-content;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Soft shadow */
+    color: #424242; /* Darker gray for summary text */
+}
+
+.summary h3 {
+    margin-top: 0;
+    color: #E65100; /* Darker orange for summary title */
+}
+
+.summary div.summary-line { /* Target specific summary lines */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.pay-button {
+    width: 100%;
+    padding: 15px; /* Slightly larger button */
+    background-color: #3a59f1; /* Warm orange button */
+    color: #fff;
+    font-size: 1.1em; /* Slightly larger font */
+    border: none;
+    border-radius: 6px; /* More rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.pay-button:hover {
+    background-color: #F57C00; /* Darker orange on hover */
+}
+
+/* Styles for links */
+a {
+    color: #F57C00; /* Orange link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.checkbox-label input {
+    margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .summary {
+        order: -1; /* Move summary above payment methods on smaller screens */
+        margin-bottom: 20px;
+    }
+    .header {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+    .header > div:last-child { /* Hide comments link on small screens */
+        /* This selector is for the specific link in your header, adjust if needed */
+        display: none;
+    }
+    .payment-methods, .summary {
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .payment-title {
+        font-size: 1.1em;
+    }
+    .method label {
+        font-size: 0.9em;
+    }
+    .method img {
+        height: 20px;
+    }
+    .payment-logos img {
+        height: 18px;
+    }
+    .pay-button {
+        padding: 10px;
+        font-size: 0.9em;
+        border-radius: 4px;
+    }
+}
+
+/* Styles for order items within the summary */
+#order-items-summary .order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 0.95em;
+    border-bottom: 1px dashed #f0f0f0;
+}
+#order-items-summary .order-item:last-child {
+    border-bottom: none;
+}

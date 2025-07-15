@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras | M&H ILUMINACIÓN</title>
+    <link rel="stylesheet" href="../estilos/stylecarrito.css">
+</head>
+<body>
+<header class="header">
+    <a href="../index.html" class="logo-link">
+        <div class="logo">M&H<span> ILUMINACIÓN</span>
+            <small> tienda online</small>
+        </div>
+    </a>
+    <input type="text" placeholder="¿Qué estás buscando?">
+    <div class="icons">
+
+        <a href="../paginas/carrito.html" class="icon-link">
+            🛒 <span class="count">0</span>
+        </a>
+        <div id="user-status">
+            <a href="../paginas/Login.html" id="login-link">Ingresar / Registrarse</a>
+            <div id="user-profile" style="display: none; align-items: center; gap: 10px;">
+                <span id="username-display" style="color: #ff9900; font-weight: bold;"></span>
+                <button id="logout-btn" style="background: #f0f0f0; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+        
+
+        <main class="carrito-container">
+            <div class="carrito-header">
+                <h1>CARRITO DE COMPRAS</h1>
+                <div class="carrito-acciones">
+                    <span id="total-items">0 productos</span>
+                </div>
+            </div>
+            
+            <div class="carrito-body" id="listaCarrito">
+                <!-- Los productos del carrito se cargarán aquí -->
+            </div>
+            
+            <div class="carrito-resumen" id="resumenCarrito">
+                <!-- El resumen del carrito se cargará aquí -->
+            </div>
+        </main>
+
+        <a class="whatsapp" href="https://wa.me/123456789" target="_blank">💬</a>
+<script src="../js/script.js"></script>
+<script src="../js/carrito.js"></script> <!-- NUEVO: Enlazar el script del carrito -->
+
+    </body>
+
+    </html>

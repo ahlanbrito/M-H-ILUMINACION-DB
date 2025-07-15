@@ -1,0 +1,137 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cuerpo */
+body {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  background: radial-gradient(circle at top left, #ff9933, #ff6600);
+  color: #fff8e7;
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+.about-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff22;
+  border: 6px dashed #ffcc00;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  color: #fffd00;
+  text-align: center;
+  text-shadow: 2px 2px #ff6600;
+  letter-spacing: 2px;
+}
+
+/* Sección de video */
+.who-we-are-video-section {
+  text-align: center;
+}
+
+/* Estilo del video wrapper */
+.video-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  border: 8px solid #ff6600;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 12px 25px rgba(255, 105, 0, 0.6);
+  padding: 10px;
+}
+
+/* Video */
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background-color: #fff;
+  filter: saturate(1.2) contrast(1.1);
+}
+
+/* --- Personalización de los Controles del Video --- */
+
+/* Estilo general para los controles (puedes ajustar el fondo de la barra de control) */
+video::-webkit-media-controls-panel {
+  background-color: #ff6600; /* Color naranja fuerte para la barra de controles */
+  border-radius: 15px; /* Bordes redondeados para la barra */
+  padding: 5px 10px;
+}
+
+/* Botón de Reproducir/Pausa */
+video::-webkit-media-controls-play-button {
+  background-color: #fffd00; /* Fondo amarillo para el botón de play */
+  border-radius: 50%; /* Lo hace circular */
+  padding: 8px; /* Espaciado interno */
+  margin-right: 10px;
+  border: 2px solid #ff9933; /* Borde naranja más claro */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+  transition: background-color 0.3s ease;
+}
+
+video::-webkit-media-controls-play-button:hover {
+  background-color: #ffeb3b; /* Un amarillo un poco más claro al pasar el ratón */
+  cursor: pointer;
+}
+
+/* Barra de progreso (track) */
+video::-webkit-media-controls-timeline {
+  background-color: #ff9933; /* Naranja medio para la barra de tiempo */
+  border-radius: 5px;
+}
+
+/* Indicador de progreso (thumb) */
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  color: #fff8e7; /* Texto blanco cremoso para el tiempo */
+  font-weight: bold;
+}
+
+/* Slider de Volumen (la barra) */
+video::-webkit-media-controls-volume-slider {
+  background-color: #ff9933; /* Naranja medio para la barra de volumen */
+  border-radius: 5px;
+  width: 80px; /* Ancho del slider */
+  height: 8px;
+  margin: 0 10px;
+}
+
+/* Icono de Volumen (el altavoz) */
+video::-webkit-media-controls-mute-button {
+  color: #fffd00; /* Icono de volumen amarillo */
+  font-size: 20px;
+}
+
+/* Responsividad y estética adicional */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-container {
+    padding: 15px;
+  }
+
+  /* Ajustes para controles en pantallas pequeñas */
+  video::-webkit-media-controls-play-button {
+    padding: 6px;
+    margin-right: 5px;
+  }
+
+  video::-webkit-media-controls-volume-slider {
+    width: 60px; /* Reducir el ancho del slider de volumen */
+  }
+}
